@@ -15,9 +15,8 @@ const thoughtController = {
         res.sendStatus(400);
       });
   },
-
   // get one Thought by id
-  getThoughtById({ params }, res) {
+  getThoughtById(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       // .populate({
       //   path: "thoughts",
@@ -51,66 +50,6 @@ const thoughtController = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // createThought({ params, body }, res) {
-  //   console.log(params);
-  //   Thought.create(body)
-  //     .then(({ _id }) => {
-  //       return User.findOneAndUpdate(
-  //         { _id: params.userId },
-  //         { $push: { thoughts: _id } },
-  //         { new: true }
-  //       );
-  //     })
-  //     .then((dbUserData) => {
-  //       console.log(dbUserData);
-  //       if (!dbUserData) {
-  //         res.status(404).json({ message: "No User found with this id!" });
-  //         return;
-  //       }
-  //       res.json(dbUserData);
-  //     })
-  //     .catch((err) => res.json(err));
-  // // },
-
-  // createThought({ params, body }, res) {
-  //   console.log(params);
-  //   Thought.create(body)
-  //     .then((_session) => {
-  //       let session = _session;
-  //       return User.$session().id;
-  //     })
-  //     .then(({ _id }) => {
-  //       return User.findOneAndUpdate(
-  //         { _id: params.userId },
-  //         { $push: { thoughts: _id } },
-  //         { new: true }
-  //       );
-  //     })
-  //     .then((dbUserData) => {
-  //       console.log(dbUserData);
-  //       if (!dbUserData) {
-  //         res.status(404).json({ message: "No User found with this id!" });
-  //         return;
-  //       }
-  //       res.json(dbUserData);
-  //     })
-  //     .catch((err) => res.json(err));
-  // },
-
-  // // // add a thought
-  // createThought({ body }, res) {
-  //   Thought.create({ thoughtText: body.thoughtText, userId: body.userId })
-  //     .then(({ _id }) =>
-  //       User.findOneAndUpdate(
-  //         { _id: body.userId },
-  //         { $push: { thoughts: _id } },
-  //         { new: true }
-  //       )
-  //     )
-  //     .then((dbThoughtData) => res.json(dbThoughtData))
-  //     .catch((err) => res.status(400).json(err));
-  // },
-  //create a thought and push the created thought's _id to the associated user's thoughts array field
 
   updateThought(req, res) {
     Thought.findOneAndUpdate(
