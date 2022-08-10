@@ -25,14 +25,16 @@ const ReactionSchema = new Schema(
   },
   {
     toJSON: {
+      virtuals:true,
       getters: true,
     },
+    id:false,
   }
 );
 
 const ThoughtSchema = new Schema(
   {
-    username: {
+    userId: {
       type: String,
       required: true,
     },
@@ -57,6 +59,12 @@ const ThoughtSchema = new Schema(
     id: false,
   }
 );
+
+// get total count of reactions
+thoughtSchema.virtual('reactionCount')
+.get(function() {
+    return this.reactions.length;
+})
 
 // ThoughtSchema.virtual('username').get(function() {
 //   return this.username;
