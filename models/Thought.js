@@ -13,7 +13,7 @@ const ReactionSchema = new Schema(
       required: true,
       maxLength: 280,
     },
-    username: {
+    author: {
       type: String,
       required: true,
     },

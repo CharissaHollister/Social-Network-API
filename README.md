@@ -4,24 +4,33 @@ Authored by Charissa Hollister 08/08/2022
 
 ## Description
 
-List notes and overall site features here<br />
+This is an API for a social network web application that allows users to be created to share their thoughts, react to other thoughts, and create a list of friends. It uses Express.js for routing and MongoDB for the database. Testing and demonstration is done using Insomnia.
 
 ## Features
 
-List notes and features here<br />
+API routes available:
+- Show all users  
+- Show a single user  
+- Create a new user
+- Update a user's username
+- Delete a single user
+- Associate another user as a friend
+- Remove the friend connection
+- Show all thoughts
+- Show a single thought
+- Create a new thought
+- Delete a single thought
+- Add a reaction to a thought
+- Remove a reaction from a thought
 
+## Demo Video
 
-## Website Access
-
-### URL Live Webpage:
+Google Drive Link to Demo:
+https://watch.screencastify.com/v/9aakcZnt2Qyj0ChLFg4q
 
 ### GitHub Repo:
 
-![ScreenShot](relative link to image)
-
-## Future improvement opportunities
-
-List them here<br />
+https://github.com/CharissaHollister/Social-Network-API
 
 ### Minimum customer criteria
 

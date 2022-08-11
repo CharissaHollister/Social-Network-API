@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require("express").Router();
 const {
   getAllThought,
   getThoughtById,
@@ -10,7 +10,7 @@ const {
 } = require("../../controllers/thought-controller");
 
 // /api/thoughts
-//todo (don't forget to push the created thought's _id to the associated user's thoughts array field)
+
 router.route("/").get(getAllThought).post(createThought);
 
 // /api/thoughts/<Id>
@@ -24,7 +24,6 @@ router
 router.route("/:thoughtId/reactions/").post(addReaction);
 
 // /api/thoughts/<thoughtId>/reactions/,reactionID.
-router.route("/:thoughtId/reactions/reactionID").delete(removeReaction);
+router.route("/:thoughtId/reactions/:reactionId").delete(removeReaction);
 
 module.exports = router;
-
